@@ -4,7 +4,7 @@ export const Header = () => {
     return (
         <C.Container>
             <h1>Cadastro de Desenvolvedores</h1>
-            <p>Faça seu cadastro na lista e receba um emprego instantaniamente</p>
+            <p>Faça seu cadastro na lista e receba um emprego instantaneamente</p>
         </C.Container>
     )
 }

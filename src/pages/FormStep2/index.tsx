@@ -37,8 +37,7 @@ export const FormStep2 = () => {
         <p>Passo 2/3</p>
         <h1>{state.name}, qual opção melhor descreve você?</h1>
         <p>
-          Escolha a opção abaixo que melhor condiz com seu estado atual
-          profissionalmente.
+          Escolha a opção abaixo que melhor condiz com seu estado profissional atualmente.
         </p>
         <hr />
 
