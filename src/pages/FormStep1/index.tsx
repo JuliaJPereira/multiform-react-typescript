@@ -34,7 +34,7 @@ export const FormStep1 = () => {
         <p>Preencha o campo abaixo com o seu nome completo.</p>
         <hr />
         <label>
-          Seu nome completo
+          Digite seu nome
           <input
             type="text"
             autoFocus
