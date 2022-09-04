@@ -22,7 +22,7 @@ export const Theme = ({children}: Props) => {
                             title='Pessoal'
                             description='Se identifique'
                             icon='profile'
-                            path='/'
+                            path='#'
                             active={state.currentStep === 1}
                         />
 
@@ -30,7 +30,7 @@ export const Theme = ({children}: Props) => {
                             title='Profissional'
                             description='Seu nível'
                             icon='book'
-                            path='/step2'
+                            path='#'
                             active={state.currentStep === 2}
                         />
 
@@ -38,8 +38,16 @@ export const Theme = ({children}: Props) => {
                             title='Contatos'
                             description='Como te achar'
                             icon='mail'
-                            path='/step3'
+                            path='#'
                             active={state.currentStep === 3}
+                        />
+
+                        <SidebarItem 
+                            title='Dados'
+                            description='Confira seus dados'
+                            icon='finalpage'
+                            path='#'
+                            active={state.currentStep === 4}
                         />
                     </C.Sidebar>
                     <C.Page>

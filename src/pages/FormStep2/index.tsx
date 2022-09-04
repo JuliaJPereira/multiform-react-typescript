@@ -34,7 +34,7 @@ export const FormStep2 = () => {
   return (
     <Theme>
       <C.Container>
-        <p>Passo 2/3</p>
+        <p>Passo 2/4</p>
         <h1>{state.name}, qual opção melhor descreve você?</h1>
         <p>
           Escolha a opção abaixo que melhor condiz com seu estado profissional atualmente.
@@ -53,7 +53,7 @@ export const FormStep2 = () => {
 
         <SelectOption
           title="Sou programador"
-          description="Já programo há 2 anos ou mais"
+          description="Programo há 2 anos ou mais"
           icon="😎"
           selected={state.level === 1}
           onClick={() => {

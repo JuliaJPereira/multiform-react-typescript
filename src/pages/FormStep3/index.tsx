@@ -3,6 +3,8 @@ import * as C from "./style";
 import { useForm, FormActions } from "../../contexts/FormContext";
 import { Theme } from "../../components/Theme";
 import { ChangeEvent, useEffect } from "react";
+import Swal from 'sweetalert2';
+
 
 export const FormStep3 = () => {
   const history = useHistory();
@@ -18,10 +20,16 @@ export const FormStep3 = () => {
   }, []);
 
   const handleNextStep = () => {
-    state.email !== "" && state.github !== ""
-      ? console.log(state)
-      : alert("Preencha os dados para finalizar!");
-  };
+    if(state.email !== "" && state.github !== ""){
+      history.push("/step4");
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Preencha os dados para finalizar!',
+      });
+    }
+  }
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
@@ -40,7 +48,7 @@ export const FormStep3 = () => {
   return (
     <Theme>
       <C.Container>
-        <p>Passo 3/3</p>
+        <p>Passo 3/4</p>
         <h1>Legal {state.name}, onde te encontramos?</h1>
         <p>Preencha seus dados para conseguirmos entrar em contato com você!</p>
         <hr />

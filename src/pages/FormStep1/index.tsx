@@ -2,7 +2,8 @@ import { useHistory } from "react-router-dom";
 import * as C from "./style";
 import { useForm, FormActions } from "../../contexts/FormContext";
 import { Theme } from "../../components/Theme";
-import { ChangeEvent, useEffect } from "react";
+import React, { ChangeEvent, useEffect } from "react";
+import Swal from 'sweetalert2';
 
 export const FormStep1 = () => {
   const history = useHistory();
@@ -13,11 +14,22 @@ export const FormStep1 = () => {
       type: FormActions.setCurrentStep,
       payload: 1,
     });
-  });
+  },[]);
 
   const handleNextStep = () => {
-    state.name !== "" ? history.push("/step2") : alert("Preencha os dados");
+    state.name !== "" ? history.push("/step2") : 
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Preencha seu nome!',
+    });
   };
+
+  const handleKeyPress = (e: any) => {
+    if(e.key === 'Enter'){
+      handleNextStep();
+    }
+  }
 
   const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
@@ -29,7 +41,7 @@ export const FormStep1 = () => {
   return (
     <Theme>
       <C.Container>
-        <p>Passo 1/3</p>
+        <p>Passo 1/4</p>
         <h1>Vamos começar com o seu nome</h1>
         <p>Preencha o campo abaixo com o seu nome.</p>
         <hr />
@@ -40,6 +52,7 @@ export const FormStep1 = () => {
             autoFocus
             value={state.name}
             onChange={handleChangeName}
+            onKeyPress={handleKeyPress}
           />
         </label>
 

@@ -3,6 +3,7 @@ import * as C from "./styles";
 import { ReactComponent as ProfileIcon } from "../../svgs/profile.svg";
 import { ReactComponent as BookIcon } from "../../svgs/book.svg";
 import { ReactComponent as MailIcon } from "../../svgs/mail.svg";
+import { ReactComponent as FinalIcon } from "../../svgs/finalpage.svg";
 
 type Props = {
   title: string;
@@ -30,6 +31,7 @@ export const SidebarItem: React.FC<Props> = ({
           {icon === "profile" && <ProfileIcon fill="white" width={24} height={24} />}
           {icon === "book" && <BookIcon fill="white" width={24} height={24} />}
           {icon === "mail" && <MailIcon fill="white" width={24} height={24} />}
+          {icon === "finalpage" && <FinalIcon fill="white" width={24} height={24} />}
         </C.IconArea>
         <C.Point active={active}></C.Point>
       </Link>
