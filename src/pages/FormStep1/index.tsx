@@ -2,7 +2,7 @@ import { useHistory } from "react-router-dom";
 import * as C from "./style";
 import { useForm, FormActions } from "../../contexts/FormContext";
 import { Theme } from "../../components/Theme";
-import React, { ChangeEvent, useEffect } from "react";
+import { ChangeEvent, useEffect } from "react";
 import Swal from 'sweetalert2';
 
 export const FormStep1 = () => {
